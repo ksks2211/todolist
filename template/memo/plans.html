@@ -1,0 +1,71 @@
+{% set title = "할일리스트" %}
+
+{% extends "layout/base.html" %}
+
+
+
+
+{% block content %}
+<table class="table table-sm table-bordered table-hover">
+
+    <colgroup>
+        <col width="55%">
+        <col width="30%">
+        <col width="15%">
+    </colgroup>
+    <thead class="thead-light">
+    <tr>
+        <th>내용</th>
+        <th>작성일</th>
+        <th>삭제</th>
+    </tr>
+   </thead>
+   <tbody>
+    {% for plan in plans %}
+    <tr>
+        
+       
+        <td>
+            <a href="/detail/{{ plan.id }}" style="font-weight: bold;">{{ plan.name}}</a>
+        </td>
+
+        <td class="small"> {{ plan.dateFormat( plan.createdAt ) }}</td>
+        <td>
+            <a href="/delete/{{ plan.id }}" class="text-danger" onclick="return confirm('삭제하시겠 습니까?')">x</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+
+   </tbody>
+</table>
+
+
+
+<a href="/write" class="btn btn-info">작성하기</a>
+
+
+<div style="padding: 1rem;">
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    
+    <li class="page-item {% if pageNum==1 %}disabled{% endif %}">
+        <a class="page-link" href="?pageNum={{ pageNum - 1 }}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+        </a>    
+    </li>
+
+    {% for idx in pagenator %}
+    <li class="page-item  {% if pageNum==idx %}active{% endif %}"><a class="page-link" href="?pageNum={{ idx }}">{{ idx }}</a></li>
+    {% endfor %}
+    <li class="page-item {% if pageNum==pnSize %}disabled{% endif %}">
+        <a class="page-link" href="?pageNum={{ pageNum + 1 }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>    
+    </li>
+  </ul>
+</nav>
+</div>
+{% endblock %}

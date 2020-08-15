@@ -1,0 +1,30 @@
+{% set title = "할일 추가" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+    <form action="" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <th>할 일</th>
+                
+            </tr>
+            <tr>
+                <td><input type="text" name="name" class="form-control" value="{{ plan.name }}"/></td>
+            </tr>
+            <tr>
+                <th>상세 내용</th>
+                
+            </tr>
+            <tr>
+                <td>
+                <textarea name="description" class="form-control" rows="10">{{ plan.description }}</textarea>
+                </td>
+            </tr>
+        </table>
+       
+
+        
+        <button class="btn btn-info">작성하기</button>
+    </form>
+
+{% endblock %} 

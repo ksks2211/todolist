@@ -1,0 +1,27 @@
+{% set title = "할일 - 상세페이지" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+    <div class="card">
+       
+        <div class="card-body">
+       
+                <h5 class="card-title">{{ plan.name }}</h5>
+            
+            <div style="padding-bottom: 1em">
+                <span style="float: right;"> 작성일 : {{ plan.dateFormat( plan.createdAt ) }}</span>
+            </div>
+            <hr>
+            <p class="card-text clear:both" style="line-break: normal; white-space: pre;"> {{ plan.description }}</p>
+            
+            <hr>
+            <a href="/" class="btn btn-info">목록으로</a>
+            <a href="/edit/{{ plan.id }}" class="btn btn-info">수정</a>
+        </div>
+    </div>
+
+   
+
+
+
+{% endblock %} 

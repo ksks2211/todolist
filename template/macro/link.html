@@ -1,0 +1,12 @@
+{#
+    href : 링크
+    text : 링크안 텍스트
+    current_url : 현재 url    
+#}
+
+
+{% macro link ( href, text, current_url) %}
+    <li class="nav-item {% if href == current_url %} active {% endif %} ">
+        <a class="nav-link" href="{{ href }}">{{ text }}</a>
+    </li>
+{% endmacro %}

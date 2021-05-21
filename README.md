@@ -1,12 +1,16 @@
 # todolist
-very simple to-do-list using nodejs
+    To-do-list using nodejs
 
 
-### screenshot1
-![screenshot1](./img/screenshot1.png)
 
-### screenshot2
-![screenshot2](./img/screenshot2.png)
+## Screenshots
+<p align="center">
+  <img src="./img/screenshot1.png" alt="screenshot1"/>
+</p>
+<p align="center">
+  <img src="./img/screenshot2.png" alt="screenshot2"/>
+</p> 
+<p align="center">
+  <img src="./img/screenshot3.png" alt="screenshot3"/>
+</p> 
 
-### screenshot3
-![screenshot3](./img/screenshot3.png)

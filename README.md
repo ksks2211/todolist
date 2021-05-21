@@ -1,5 +1,6 @@
 # todolist
-    To-do-list using nodejs
+    npm i
+    npm start
 
 
 
